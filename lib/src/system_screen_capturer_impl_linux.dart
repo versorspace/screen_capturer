@@ -4,7 +4,7 @@ import 'capture_mode.dart';
 import 'system_screen_capturer.dart';
 
 final Map<CaptureMode, List<String>> _knownCaptureModeArgs = {
-  CaptureMode.region: ['-a'],
+  CaptureMode.region: ['-s'],
   CaptureMode.screen: [],
   CaptureMode.window: ['-w'],
 };
@@ -19,7 +19,7 @@ class SystemScreenCapturerImplLinux extends SystemScreenCapturer {
     bool silent = true,
   }) async {
     await Process.run(
-      'gnome-screenshot',
+      'maim',
       [
         ..._knownCaptureModeArgs[mode]!,
         '-f',
