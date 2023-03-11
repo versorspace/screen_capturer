@@ -22,7 +22,6 @@ class SystemScreenCapturerImplLinux extends SystemScreenCapturer {
       'maim',
       [
         ..._knownCaptureModeArgs[mode]!,
-        '-f',
         imagePath,
       ],
     );
